@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Git for the rockstar developper</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,57 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- MODULE 01: Introduction -->
+				<section>
+					<section>
+						Git for the rockstar developper
+					</section>
+					<section>
+						GIT est le gestionnaire de version le plus populaire, utilisé dans de nombreux projets open-source comme AngularJS, NodeJS,
+						Spring Framework, Bootstrap, Gradle...
+					</section>
+					<section>
+						Il a été créé par Linus Torvalds (auteur du noyau Linux). Contrairement à SVN, sa particularité est d’être
+						<b>décentralisé</b>.
+					</section>
+					<section>
+						<h4>Decentralisé</h4>
+						<p>Un dépôt local GIT contient une <b>copie complète du repository</b> distant dans le dossier caché .git.​</p>
+						<p>Un dépôt local SVN ne contient que <b>les méta datas des fichiers</b>, le reste est stocké sur le serveur distant.​</p>
+					</section>
+					<section>
+						Avec GIT les données sont stockées dans le <b>repo local</b> puis un push permet de les envoyer sur le serveur distant. 
+						L’avantage est de pouvoir travailler en local indépendamment du serveur, puis envoyer les modifications seulement lorsque c’est nécessaire.
+					</section>
+					<section>
+						<h4>Branches</h4>
+						Pour chaque nouvelles features une branche est créée puis fusionnée à la branche principale, 
+						à la différence de SVN où une seule branche principale est utilisée.​
+					</section>
+					<section>
+							Chaque fonctionnalité est isolée dans une branche spécifique. 
+							On s’assure simplement que la branche principale reste stable après l’intégration des différentes fonctionnalités.​
+					</section>
+					<section>
+						<img data-src="assets/gitbranches.png">
+					</section>
+				</section>
+				<!-- MODULE 02: Basic GIT  -->
+				<section>
+					<section>Git basics</section>
+				</section>
+				<!-- MODULE 03: ADVANCED GIT -->
+				<section>
+					<section>ADVANCED GIT</section>
+				</section>
+				<!-- MODULE 04: GIT FLOW -->
+				<section>
+					<section>GIT FLOW</section>
+				</section>
+				<!-- MODULE 05: REX -->
+				<section>
+					<section>REX</section>
+				</section>
 			</div>
 		</div>
 
@@ -41,7 +90,7 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 				]
 			});
 		</script>
