@@ -178,7 +178,156 @@
 				</section>
 				<!-- MODULE 03: ADVANCED GIT -->
 				<section>
-					<section>ADVANCED GIT</section>
+					<section>Advanced GIT</section>
+					<section>
+							"Je suis en train d’implémenter une nouvelle fonctionnalité sur la branche master (qui est la branche par défaut sous GIT). Mon n+1 me demande de corriger un bug urgent sur un précédent commit. Malheureusement, je suis obligé de terminer mes modifications avant de corriger ce bug… "
+					</section>
+					<section>
+						<h4>Branches 1</h4>
+						Dans ce cas là, la solution aurai été de créer une nouvelle branche afin de pouvoir mettre de côté l'ensemble des commits correspondant à la feature. 
+						<pre>
+							<code data-trim>
+								# New branch
+								git checkout -b myFeature
+								# Retourner sur master
+								git checkout master
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Branches 2</h4>
+						Chaque projet decidera du nombre de branches / de la manière de gérer ses feature.
+						En général, <b>master</b> correspond aux versions stables de l'application, <b>develop</b> est la version sur laquelle l'équipe travaille. 
+						Chaque <b>feature</b> peut être une branche à part. 
+					</section>
+					<section>
+						<h4>Branches 3</h4>
+						La commande checkout permet également de se <em>déplacer</em> vers une commit (<em>sha1</em>) voir un tag.
+						<pre>
+							<code data-trim>
+								git checkout 68bdcf9 # Premier commit de cette presentation ..
+							</code>
+						</pre> 
+					</section>
+					<section>
+						<h4>Branches 4</h4>
+						Pour obtenir la liste des différentes branches du repository local / distant et les différences
+						<pre>
+							<code data-trim>
+								git branch
+								git branch -vv
+								git branch -av
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Branches 5</h4>
+						On peut supprimer une branche, du repository local, du remote ou les 2.
+						<pre>
+							<code data-trim>
+								git branch -d localBranch
+								git branch -D remoteBranch
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Merge</h4>
+						On peut merger des modifications d'une autre branche sur la branche courrante.
+						<pre>
+							<code data-trim>
+								git merge master
+							</code>
+						</pre>
+						Aura pour conséquence de rammener toutes les modifications présente sur <b>master</b> sur la branche courante.
+					</section>
+					<section>
+						<h4>Conflits 1</h4>
+						La plupart du temps, lors d'un <em>merge</em> GIT sait reconnaitre quels sont les fichiers modifiés et permet un <em>auto-merging</em> des fichiers.
+						Dans le cas contraire, l'opération est stoppée le temps que les conflits soit resolus.
+					</section>
+					<section>
+						<h4>Conflits 2</h4>
+						Les fichiers présentant un conflit que Git ne sait pas résoudre automatiquement, sont modifiés par Git et il est <b>impératif</b> de résoudre l'intégralité 
+						des conflits avant de pouvoir continuer.
+					</section>
+					<section>
+						<pre>
+							<code data-trim>
+								<<<<<<< HEAD:index.html
+								// code modifié sur la branche locale
+								=======
+								// code modifié sur la branche qui est fusionné
+								>>>>>>> remoteBranch:index.html
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Conflits 3</h4>
+						<b>Attention</b> aux différents outils réalisant des merges conflicts <em>automatiquement.</em> (IntelliJ...)
+					</section>
+					<section>
+						<h4>Rebase</h4>
+					</section>
+					<section>
+						<h4>Merge !== Rebase</h4> 
+					</section>
+					<section>
+						<h4>Rebase</h4>
+						Il est parfois utile, de ne pas souhaiter de commits de merge superflus lorsque l'on souhaite ramener une feature sur master.
+					</section>
+					<section>
+						<h4>Rebase</h4>
+						On a réalisé une mauvaise manip, et on souhaite <em>littéralement</em> réécrire l'historique de GIT.
+					</section>
+					<section>
+						<h4>Rebase</h4>
+						On souhaite <em>squash</em> les différents commits réalisés sur notre branche de developpement en un seul commit avant de valider la feature. 
+					</section>
+					<section>
+						<h4>Merge</h4>
+						<img data-src="assets/gitmerge.png">
+						<pre>
+							<code data-trim>
+								git checkout master
+								git merge experiment
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Rebase</h4>
+						<img data-src="assets/gitrebase.png">
+						<pre>
+							<code data-trim>
+								git checkout experiment
+								git rebase master
+							</code>
+						</pre>
+					</section>
+					<section>
+						Ne jamais ( <em>hum...</em> ) rebase des commits qui ont déjà été poussés sur un repo distant.
+						<pre>
+							<code data-trim>
+								# If you know what your doing
+								git push -f 
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Recommandation</h4>
+						Un commit est un état stable de l'application, vérifier que ça compile ça mange pas de pain :)
+					</section>
+					<section>
+						<h4>Recommandation</h4>
+						<em>More commits!</em>
+					</section>
+					<section>
+						<h4>Recommandation</h4>
+						Toujours vérifier ses modifications avec des les commiter.
+					</section>
+					<section>
+						<h4>Recommandation</h4>
+						Merge vs Rebase
+					</section>
 				</section>
 				<!-- MODULE 04: GIT FLOW -->
 				<section>
