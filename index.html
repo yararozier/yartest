@@ -12,6 +12,8 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<link rel="stylesheet" href="assets/custom.css">
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -62,6 +64,117 @@
 				<!-- MODULE 02: Basic GIT  -->
 				<section>
 					<section>Git basics</section>
+					<section>
+						Identifier l'auteur de chaque modification du repository
+						<pre>
+							<code data-trim data-noescape>
+									git config --global user.name "Joani COUMA"
+									git config --global user.email joani.couma@cgi.com	
+							</code>
+						</pre>
+					</section>
+					<section>
+						Créer un repository
+						<pre>
+							<code data-trim>
+								git init
+							</code>
+						</pre>
+						<b>Clôner</b> un repository distant
+						<pre>
+							<code data-trim>
+								git clone https://xyz.com.git
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Remotes</h4>
+						Pour collaborer avec notre équipe nous avons besoin d’un <b>référentiel commun</b> sur lequel partager nos ressources. Un <b>remote</b>.
+						<pre>
+							<code data-trim>
+								# Ajouter un remote
+								git remote add remoteName remoteAdress
+								# Lister les remote
+								git remote -v
+								# Supprimer un remote
+								git remote rm remoteName
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Repository status</h4>
+						A chaque modification ajout / suppression le repository <b>local</b> possède un état propre
+						<pre>
+							<code data-trim>
+								git status
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Pull</h4>
+						Avant de commencer la modification d'un quelconque fichier il est nécessaire d'être <b>à jour</b>.
+						<pre>
+							<code data-trim>
+								git pull remoteName branchName
+								git pull origin master
+								git pull # Current branch
+							</code>
+						</pre>
+						Il y a d'autre manière de se mettre à jour.
+					</section>
+					<section>
+						<h4>Indexation 1</h4>
+						Chaque changement (modification, ajout, suppression) d'un fichier doit être indexé par Git.
+						<pre>
+							<code data-trim>
+								git add fileName
+								git add . 
+							</code>
+						</pre>
+						Les fichiers sont alors à l'état <b>staged</b>
+					</section>
+					<section>
+						<h4>Indexation 2</h4>
+						Il est possible de desindexer un fichier 
+						<pre>
+							<code data-trim>
+								git reset HEAD fileName
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Commits 1</h4>
+						Une fois les modification staged, il est possible de les commit. Le repository <b>local</b> est alors modifié.
+						<pre>
+							<code data-trim>
+								git commit 
+								git commit -m 'feat: Initial Commit'
+								git commit -am 'feat: Initial Commit'
+							</code>
+						</pre>
+						Attention l'option -am n'indexe pas les fichiers nouvellement créés.
+					</section>
+					<section>
+						<h4>Commits 2</h4>
+						A chaque commits est associé un idenfiant unique (<em>hash</em>, ou <em>sha1</em>). 
+						Il est visible lors de la création d'un commit et dans l'historique.
+						<pre>
+							<code data-trim>
+								git log 
+								git log --pretty=oneline --abbrev-commit
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Push</h4>
+						Une fois que l'on est satisfait des différents commits locaux il est alors temps de les pousser sur le repo distant...
+						<pre>
+							<code data-trim>
+								git push remoteName branchName
+								git push origin master
+							</code>
+						</pre>
+					</section>
 				</section>
 				<!-- MODULE 03: ADVANCED GIT -->
 				<section>
