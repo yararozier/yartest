@@ -83,7 +83,7 @@
 						<b>Clôner</b> un repository distant
 						<pre>
 							<code data-trim>
-								git clone https://xyz.com.git
+								git clone https://github.com/RoanixS2k12/git-presentation.git
 							</code>
 						</pre>
 					</section>
@@ -152,7 +152,6 @@
 								git commit -am 'feat: Initial Commit'
 							</code>
 						</pre>
-						Attention l'option -am n'indexe pas les fichiers nouvellement créés.
 					</section>
 					<section>
 						<h4>Commits 2</h4>
@@ -172,6 +171,36 @@
 							<code data-trim>
 								git push remoteName branchName
 								git push origin master
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Bonus: Stash</h4>
+						Lorsque l'on souhaite "mettre de côté" un travail en cours, inachevé
+						<pre>
+							<code data-trim>
+								git stash 	# Mets de côté le travail en cours
+								git stash pop 	# Récupère le travail dernièrement remisé 
+								git stash list 	# List tous les "états sauvegardés"
+							</code>
+						</pre> 
+					</section>
+					<section>
+						<h4>Bonus: Reset</h4>
+						Lorsque nous sommes dans un etat bien trop instable...
+						<pre>
+							<code data-trim>
+								git reset HEAD origin/branchName
+								git reset --hard origin/branch # Revient à l'état de la branch remote 
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Bonus: Cherry-pick</h4>
+						Récupère les modifications présente sur un commit exterieur à la branch actuelle, et applique ces modifications
+						<pre>
+							<code>
+								git cherry-pick #sha1 
 							</code>
 						</pre>
 					</section>
@@ -222,11 +251,17 @@
 					</section>
 					<section>
 						<h4>Branches 5</h4>
-						On peut supprimer une branche, du repository local, du remote ou les 2.
+						Pour supprimer une branche du repository local, du remote ou les 2.
 						<pre>
 							<code data-trim>
-								git branch -d localBranch
-								git branch -D remoteBranch
+								git branch -d localBranch # --delete
+								git branch -D remoteBranch # --delete --force
+							</code>
+						</pre>
+						Ainsi que du remote 
+						<pre>
+							<code data-trim>
+								git push remote_name --delete branch_name
 							</code>
 						</pre>
 					</section>
@@ -323,6 +358,11 @@
 					<section>
 						<h4>Recommandation</h4>
 						Toujours vérifier ses modifications avec des les commiter.
+						<pre>
+							<code data-trim>
+								git diff
+							</code>
+						</pre>
 					</section>
 					<section>
 						<h4>Recommandation</h4>
