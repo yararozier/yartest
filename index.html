@@ -67,22 +67,22 @@
 					<section>
 						Identifier l'auteur de chaque modification du repository
 						<pre>
-							<code data-trim data-noescape>
+							<code data-trim data-noescape class="bash">
 									git config --global user.name "Joani COUMA"
-									git config --global user.email joani.couma@cgi.com	
+									git config --global user.email joani.couma1_ext@michelin.com	
 							</code>
 						</pre>
 					</section>
 					<section>
 						Créer un repository
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git init
 							</code>
 						</pre>
 						<b>Clôner</b> un repository distant
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git clone https://github.com/RoanixS2k12/git-presentation.git
 							</code>
 						</pre>
@@ -91,7 +91,7 @@
 						<h4>Remotes</h4>
 						Pour collaborer avec notre équipe nous avons besoin d’un <b>référentiel commun</b> sur lequel partager nos ressources. Un <b>remote</b>.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								# Ajouter un remote
 								git remote add remoteName remoteAdress
 								# Lister les remote
@@ -105,7 +105,7 @@
 						<h4>Repository status</h4>
 						A chaque modification ajout / suppression le repository <b>local</b> possède un état propre
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git status
 							</code>
 						</pre>
@@ -114,7 +114,7 @@
 						<h4>Pull</h4>
 						Avant de commencer la modification d'un quelconque fichier il est nécessaire d'être <b>à jour</b>.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git pull remoteName branchName
 								git pull origin master
 								git pull # Current branch
@@ -126,7 +126,7 @@
 						<h4>Indexation 1</h4>
 						Chaque changement (modification, ajout, suppression) d'un fichier doit être indexé par Git.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git add fileName
 								git add . 
 							</code>
@@ -137,7 +137,7 @@
 						<h4>Indexation 2</h4>
 						Il est possible de desindexer un fichier 
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git reset HEAD fileName
 							</code>
 						</pre>
@@ -146,7 +146,7 @@
 						<h4>Commits 1</h4>
 						Une fois les modification staged, il est possible de les commit. Le repository <b>local</b> est alors modifié.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git commit 
 								git commit -m 'feat: Initial Commit'
 								git commit -am 'feat: Initial Commit'
@@ -158,7 +158,7 @@
 						A chaque commits est associé un idenfiant unique (<em>hash</em>, ou <em>sha1</em>). 
 						Il est visible lors de la création d'un commit et dans l'historique.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git log 
 								git log --pretty=oneline --abbrev-commit
 							</code>
@@ -168,7 +168,7 @@
 						<h4>Push</h4>
 						Une fois que l'on est satisfait des différents commits locaux il est alors temps de les pousser sur le repo distant...
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git push remoteName branchName
 								git push origin master
 							</code>
@@ -178,7 +178,7 @@
 						<h4>Bonus: Stash</h4>
 						Lorsque l'on souhaite "mettre de côté" un travail en cours, inachevé
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git stash 	# Mets de côté le travail en cours
 								git stash pop 	# Récupère le travail dernièrement remisé 
 								git stash list 	# List tous les "états sauvegardés"
@@ -189,7 +189,7 @@
 						<h4>Bonus: Reset</h4>
 						Lorsque nous sommes dans un etat bien trop instable...
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git reset HEAD origin/branchName
 								git reset --hard origin/branch # Revient à l'état de la branch remote 
 							</code>
@@ -199,7 +199,7 @@
 						<h4>Bonus: Cherry-pick</h4>
 						Récupère les modifications présente sur un commit exterieur à la branch actuelle, et applique ces modifications
 						<pre>
-							<code>
+							<code data-trim class="bash">
 								git cherry-pick #sha1 
 							</code>
 						</pre>
@@ -215,7 +215,7 @@
 						<h4>Branches 1</h4>
 						Dans ce cas là, la solution aurai été de créer une nouvelle branche afin de pouvoir mettre de côté l'ensemble des commits correspondant à la feature. 
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								# New branch
 								git checkout -b myFeature
 								# Retourner sur master
@@ -233,7 +233,7 @@
 						<h4>Branches 3</h4>
 						La commande checkout permet également de se <em>déplacer</em> vers une commit (<em>sha1</em>) voir un tag.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git checkout 68bdcf9 # Premier commit de cette presentation ..
 							</code>
 						</pre> 
@@ -242,7 +242,7 @@
 						<h4>Branches 4</h4>
 						Pour obtenir la liste des différentes branches du repository local / distant et les différences
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git branch
 								git branch -vv
 								git branch -av
@@ -253,14 +253,14 @@
 						<h4>Branches 5</h4>
 						Pour supprimer une branche du repository local, du remote ou les 2.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git branch -d localBranch # --delete
 								git branch -D remoteBranch # --delete --force
 							</code>
 						</pre>
 						Ainsi que du remote 
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git push remote_name --delete branch_name
 							</code>
 						</pre>
@@ -269,7 +269,7 @@
 						<h4>Merge</h4>
 						On peut merger des modifications d'une autre branche sur la branche courrante.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git merge master
 							</code>
 						</pre>
@@ -287,7 +287,7 @@
 					</section>
 					<section>
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								<<<<<<< HEAD:index.html
 								// code modifié sur la branche locale
 								=======
@@ -322,7 +322,7 @@
 						<h4>Merge</h4>
 						<img data-src="assets/gitmerge.png">
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git checkout master
 								git merge experiment
 							</code>
@@ -332,7 +332,7 @@
 						<h4>Rebase</h4>
 						<img data-src="assets/gitrebase.png">
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git checkout experiment
 								git rebase master
 							</code>
@@ -341,7 +341,7 @@
 					<section>
 						Ne jamais ( <em>hum...</em> ) rebase des commits qui ont déjà été poussés sur un repo distant.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								# If you know what your doing
 								git push -f 
 							</code>
@@ -357,9 +357,9 @@
 					</section>
 					<section>
 						<h4>Recommandation</h4>
-						Toujours vérifier ses modifications avec des les commiter.
+						Toujours vérifier ses modifications avant de les commiter.
 						<pre>
-							<code data-trim>
+							<code data-trim class="bash">
 								git diff
 							</code>
 						</pre>
@@ -375,7 +375,51 @@
 				</section>
 				<!-- MODULE 05: REX -->
 				<section>
-					<section>REX</section>
+					<section>
+						<h4>... And more !</h4>
+					</section>
+					<section>
+						Limites de Git Flow
+					</section>
+					<section>
+						<ul>
+							<li>
+								Gestion des responsabilités
+							</li>
+							<li>
+								Est-ce qu'on est <b>sûre</b> d'être <i>ready</i> ?
+							</li>
+							<li>
+								C'est quoi la version de cette feature ?
+							</li>
+						</ul>
+					</section>
+					<section>
+						<p>
+							<q>Oui oui j'ai bossé samedi soir...</q><br>
+						  	N'importe quel développeur 
+						</p>
+					</section>
+					<section>
+						<h4>Solutions</h4>
+					</section>
+					<section>
+						<h4>Responsabilisation</h4>
+						<ul>
+							<li>
+								Merge / Pull Requests
+							</li>
+							<li>
+								Reviewers 
+							</li>
+							<li>
+								Cycles de release fixes
+							</li>
+							<li>
+								Master peut être redéployée à n'importe quel moment
+							</li>
+						</ul>
+					</section>
 				</section>
 			</div>
 		</div>
