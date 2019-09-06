@@ -2,24 +2,24 @@
 
 Format :
 
-- Some history
+**Some history**
 
-	Git ? Kesako ? 
+Git ? Kesako ? 
 
-- Git basics
+**Git basics**
 
-	"I know how to Git"
+"I know how to Git"
 
-- Advanved Git
+**Advanved Git**
 
-	"I know how to Git, and the advanved tools" 
+"I know how to Git, and the advanved tools" 
 
-- Git Flow
+**Git Flow**
 
-	"A new way of thinking"
+"A new way of thinking"
 
-- And more !
+**And more**
 
-	"Limits" 
+"Limits" 
 
 > This repository uses reveal.js to create slides 
